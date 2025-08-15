@@ -3,3 +3,11 @@ artifacts_root: artifacts
 data_ingestion:
   root_dir: artifacts\data_ingestion
   local_data_path: artifacts\data_ingestion
+
+
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/saved_samsum_dataset
+  tokenizer_name: google-t5/t5-small
+

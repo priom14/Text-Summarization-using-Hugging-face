@@ -8,3 +8,125 @@
 [2025-08-15 19:23:41,393: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
 [2025-08-15 19:23:41,399: INFO: data_ingestion: Dataset loaded]
 [2025-08-15 19:23:41,401: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 21:47:35,470: INFO: main: Data Ingestion Stage started ..........]
+[2025-08-15 21:47:35,479: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:47:35,480: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:47:35,481: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:47:35,481: INFO: common: Created directory at : artifacts\data_ingestion]
+[2025-08-15 21:47:40,074: INFO: data_ingestion: Saved train data to artifacts\data_ingestion\train.csv]
+[2025-08-15 21:47:40,086: INFO: data_ingestion: Saved validation data to artifacts\data_ingestion\validation.csv]
+[2025-08-15 21:47:40,099: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
+[2025-08-15 21:47:40,099: INFO: data_ingestion: Dataset loaded]
+[2025-08-15 21:47:40,101: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 21:49:27,332: INFO: main: Data Ingestion Stage started ..........]
+[2025-08-15 21:49:27,334: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:49:27,335: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:49:27,335: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:49:27,336: INFO: common: Created directory at : artifacts\data_ingestion]
+[2025-08-15 21:49:31,688: INFO: data_ingestion: Saved train data to artifacts\data_ingestion\train.csv]
+[2025-08-15 21:49:31,700: INFO: data_ingestion: Saved validation data to artifacts\data_ingestion\validation.csv]
+[2025-08-15 21:49:31,714: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
+[2025-08-15 21:49:31,714: INFO: data_ingestion: Dataset loaded]
+[2025-08-15 21:49:31,715: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 21:57:07,212: INFO: main: Data Ingestion Stage started ..........]
+[2025-08-15 21:57:07,214: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:57:07,216: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:57:07,216: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:57:07,216: INFO: common: Created directory at : artifacts\data_ingestion]
+[2025-08-15 21:57:11,798: INFO: data_ingestion: Saved train data to artifacts\data_ingestion\train.csv]
+[2025-08-15 21:57:11,811: INFO: data_ingestion: Saved validation data to artifacts\data_ingestion\validation.csv]
+[2025-08-15 21:57:11,823: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
+[2025-08-15 21:57:11,824: INFO: data_ingestion: Dataset loaded]
+[2025-08-15 21:57:11,825: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 21:57:11,825: INFO: main: Data Transforamtion Stage started ..........]
+[2025-08-15 21:57:11,827: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:57:11,827: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:57:11,827: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:57:11,828: INFO: common: Created directory at : artifacts/data_transformation]
+[2025-08-15 21:57:15,945: ERROR: main: 'dialouge']
+Traceback (most recent call last):
+  File "D:\ML\Data SC\ML\try\Text Summarization\main.py", line 21, in <module>
+    data_transformation.initiate_data_transformation()
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\pipeline\data_transformation_pipeline.py", line 14, in initiate_data_transformation
+    data_transforamtion.convert()
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\components\data_transformation.py", line 28, in convert
+    dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_feature, batched= True)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\dataset_dict.py", line 946, in map
+    dataset_dict[split] = dataset.map(
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 560, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3318, in map
+    for rank, done, content in Dataset._map_single(**unprocessed_kwargs):
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3674, in _map_single
+    for i, batch in iter_outputs(shard_iterable):
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3624, in iter_outputs
+    yield i, apply_function(example, i, offset=offset)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3547, in apply_function
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\components\data_transformation.py", line 15, in convert_examples_to_feature
+    input_encodings = self.tokenizer(example_batch['dialouge'], max_length =  1024, truncation = True)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\formatting\formatting.py", line 282, in __getitem__
+    value = self.data[key]
+KeyError: 'dialouge'
+[2025-08-15 21:59:31,957: INFO: main: Data Ingestion Stage started ..........]
+[2025-08-15 21:59:31,958: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:59:31,959: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:59:31,959: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:59:31,960: INFO: common: Created directory at : artifacts\data_ingestion]
+[2025-08-15 21:59:36,305: INFO: data_ingestion: Saved train data to artifacts\data_ingestion\train.csv]
+[2025-08-15 21:59:36,316: INFO: data_ingestion: Saved validation data to artifacts\data_ingestion\validation.csv]
+[2025-08-15 21:59:36,330: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
+[2025-08-15 21:59:36,330: INFO: data_ingestion: Dataset loaded]
+[2025-08-15 21:59:36,331: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 21:59:36,331: INFO: main: Data Transforamtion Stage started ..........]
+[2025-08-15 21:59:36,332: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 21:59:36,333: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 21:59:36,333: INFO: common: Created directory at : artifacts]
+[2025-08-15 21:59:36,333: INFO: common: Created directory at : artifacts/data_transformation]
+[2025-08-15 21:59:37,817: ERROR: main: TextEncodeInput must be Union[TextInputSequence, Tuple[InputSequence, InputSequence]]]
+Traceback (most recent call last):
+  File "D:\ML\Data SC\ML\try\Text Summarization\main.py", line 21, in <module>
+    data_transformation.initiate_data_transformation()
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\pipeline\data_transformation_pipeline.py", line 14, in initiate_data_transformation
+    data_transforamtion.convert()
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\components\data_transformation.py", line 28, in convert
+    dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_feature, batched= True)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\dataset_dict.py", line 946, in map
+    dataset_dict[split] = dataset.map(
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 560, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3318, in map
+    for rank, done, content in Dataset._map_single(**unprocessed_kwargs):
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3674, in _map_single
+    for i, batch in iter_outputs(shard_iterable):
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3624, in iter_outputs
+    yield i, apply_function(example, i, offset=offset)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\datasets\arrow_dataset.py", line 3547, in apply_function
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "D:\ML\Data SC\ML\try\Text Summarization\src\components\data_transformation.py", line 15, in convert_examples_to_feature
+    input_encodings = self.tokenizer(example_batch['dialogue'], max_length =  1024, truncation = True)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\transformers\tokenization_utils_base.py", line 2910, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\transformers\tokenization_utils_base.py", line 2998, in _call_one
+    return self.batch_encode_plus(
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\transformers\tokenization_utils_base.py", line 3199, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "D:\ML\Data SC\ML\try\Text Summarization\tsvenv\lib\site-packages\transformers\tokenization_utils_fast.py", line 553, in _batch_encode_plus
+    encodings = self._tokenizer.encode_batch(
+TypeError: TextEncodeInput must be Union[TextInputSequence, Tuple[InputSequence, InputSequence]]
+[2025-08-15 22:08:59,241: INFO: main: Data Ingestion Stage started ..........]
+[2025-08-15 22:08:59,242: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 22:08:59,243: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 22:08:59,243: INFO: common: Created directory at : artifacts]
+[2025-08-15 22:08:59,244: INFO: common: Created directory at : artifacts\data_ingestion]
+[2025-08-15 22:09:03,734: INFO: data_ingestion: Saved train data to artifacts\data_ingestion\train.csv]
+[2025-08-15 22:09:03,747: INFO: data_ingestion: Saved validation data to artifacts\data_ingestion\validation.csv]
+[2025-08-15 22:09:03,759: INFO: data_ingestion: Saved test data to artifacts\data_ingestion\test.csv]
+[2025-08-15 22:09:03,759: INFO: data_ingestion: Dataset loaded]
+[2025-08-15 22:09:03,760: INFO: main: Data Ingestion Stage is completed!]
+[2025-08-15 22:09:03,760: INFO: main: Data Transforamtion Stage started ..........]
+[2025-08-15 22:09:03,761: INFO: common: yaml file: config\config.yaml loaded succesfully]
+[2025-08-15 22:09:03,762: INFO: common: yaml file: params.yaml loaded succesfully]
+[2025-08-15 22:09:03,762: INFO: common: Created directory at : artifacts]
+[2025-08-15 22:09:03,762: INFO: common: Created directory at : artifacts/data_transformation]
+[2025-08-15 22:09:06,753: INFO: main: Data Transforamtion Stage is completed!]

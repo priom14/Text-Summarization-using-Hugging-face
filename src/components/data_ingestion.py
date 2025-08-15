@@ -10,6 +10,9 @@ class DataIngestion:
     
     def load_data(self):
         ds = load_dataset("knkarthick/samsum")
+        
+        ds.save_to_disk(os.path.join(self.config.local_data_path,"saved_samsum_dataset"))
+        
         for split, dataset in ds.items():
             filepath = os.path.join(self.config.local_data_path, f"{split}.csv")
             dataset.to_csv(filepath)
